@@ -199,25 +199,25 @@ extern "C" const uint16_t* tud_descriptor_string_cb(uint8_t index, uint16_t lang
 
 // ── Pin assignments (Arduino Nano ESP32 labels — see arduino-esp-32-wiring.md) ─
 // Left (analog) header: push buttons + encoders. Right (digital) header: toggles +
-// status LED. Pins were chosen so no two wires cross with the Nano in the middle of
-// the panel (see docs/wiring-diagram.svg).
+// status LED. This is the as-built wiring: several controls ended up on other pins
+// than first planned (see docs/wiring-diagram.svg).
 //
 // Encoders: A/B quadrature pins; common (C) to GND. No push switches.
 const uint8_t ENC_COUNT = 2;
-const uint8_t encA[ENC_COUNT] = { A3, A5 };
-const uint8_t encB[ENC_COUNT] = { A4, A6 };
+const uint8_t encA[ENC_COUNT] = { A4, A6 };
+const uint8_t encB[ENC_COUNT] = { A3, A5 };
 
 // Push buttons PB1..PB4 (one terminal to the MCU, the other to GND).
 const uint8_t PB_COUNT = 4;
-const uint8_t pbPin[PB_COUNT] = { A2, A1, A0, A7 };
+const uint8_t pbPin[PB_COUNT] = { A0, A1, A2, A7 };
 
 // Momentary (ON)-OFF-(ON) toggles T1..T6: the two outer lugs go to the MCU, the
 // centre lug to GND. Centred = neither pin LOW. A bat-handle toggle closes the lug
 // opposite the lever; if a throw reads backwards, swap that toggle's UP/DN pins here.
 // D0 is the UART RX pin, free because the hardware UART is never started.
 const uint8_t TOG_COUNT = 6;
-const uint8_t togUp[TOG_COUNT] = { D12, D10, D8, D0, D3, D5 };
-const uint8_t togDn[TOG_COUNT] = { D11, D9,  D7, D2, D4, D6 };
+const uint8_t togUp[TOG_COUNT] = { D4, D8, D11, D2, D6, D10 };
+const uint8_t togDn[TOG_COUNT] = { D3, D7, D12, D0, D5, D9 };
 
 // NOTE: every input above is driven with INPUT_PULLUP, so the closed-to-GND wiring
 // reads LOW = pressed. All of these GPIOs support the ESP32-S3 internal pull-up.
@@ -225,7 +225,7 @@ const uint8_t togDn[TOG_COUNT] = { D11, D9,  D7, D2, D4, D6 };
 
 // ── Status LED (D1) ────────────────────────────────────────────────────────────
 // LED + 120 Ω from D1 to GND. Unlike the other Nobs modules it isn't on D4, which
-// T5 uses. D1 is the UART TX pin (GPIO43): the ROM bootloader prints on it at reset,
+// T1 uses. D1 is the UART TX pin (GPIO43): the ROM bootloader prints on it at reset,
 // so the LED flickers briefly at power-up before the firmware takes over the pin.
 const uint8_t STATUS_LED_PIN = D1;
 
