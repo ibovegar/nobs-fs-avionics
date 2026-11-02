@@ -1,18 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1132 1145" width="1132" height="1145" role="img" aria-label="Wiring diagram for Nobs Avionics">
 <title>Nobs Avionics wiring diagram</title>
 <style>
-  svg { --bg:#f6f8f7; --paper:#ffffff; --ink:#1a2321; --muted:#5b6965; --rule:#cdd5d2;
+  svg { --bg:#ffffff; --paper:#ffffff; --ink:#1a2321; --muted:#5b6965; --rule:#cdd5d2;
         --pcb:#0e6b67; --pcb-ink:#e4f3f1; --pcb-dim:#7fb3ae;
         --btn:#b8730a; --enc:#4659bd; --tog:#2a8548; --led:#c4342a; --gnd:#39403e; }
-  @media (prefers-color-scheme: dark) {
-    svg { --bg:#111615; --paper:#19201f; --ink:#e2eae7; --muted:#92a19d; --rule:#2d3735;
-          --pcb:#13706b; --pcb-ink:#e4f3f1; --pcb-dim:#8cc2bc;
-          --btn:#e8a53c; --enc:#8d9df3; --tog:#5ec27e; --led:#f06a5f; --gnd:#b6c2bf; }
-  }
   .t { font-family: "JetBrains Mono", Consolas, "DejaVu Sans Mono", monospace; fill: var(--ink); }
   .h { font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; fill: var(--ink); }
 </style>
-<rect width="1132" height="1145" rx="8" fill="var(--bg)"/>
+<rect width="1132" height="1145" fill="var(--bg)"/>
 <text x="40" y="50" class="h" font-size="28" font-weight="700">Nobs Avionics · wiring</text>
 <text x="40" y="74" class="h" font-size="14" fill="var(--muted)">4 push buttons · 2 encoders · 6 (ON)-OFF-(ON) momentary toggles · status LED</text>
 <rect x="40" y="94" width="18" height="3" rx="1.5" fill="var(--btn)"/><text x="64" y="99" class="t" font-size="11" fill="var(--muted)">push button</text><rect x="160.8" y="94" width="18" height="3" rx="1.5" fill="var(--enc)"/><text x="184.8" y="99" class="t" font-size="11" fill="var(--muted)">encoder</text><rect x="254.4" y="94" width="18" height="3" rx="1.5" fill="var(--tog)"/><text x="278.4" y="99" class="t" font-size="11" fill="var(--muted)">toggle</text><rect x="341.2" y="94" width="18" height="3" rx="1.5" fill="var(--led)"/><text x="365.2" y="99" class="t" font-size="11" fill="var(--muted)">LED</text><rect x="407.6" y="94" width="18" height="3" rx="1.5" fill="var(--gnd)"/><text x="431.6" y="99" class="t" font-size="11" fill="var(--muted)">GND</text>
